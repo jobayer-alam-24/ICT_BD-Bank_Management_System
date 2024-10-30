@@ -35,6 +35,9 @@ namespace ICT_BD_Bank_Management_System.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Age = table.Column<int>(type: "int", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerStatus = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
