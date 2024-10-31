@@ -2,20 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ICT_BD_Bank_Management_System.interfaces;
 using ICT_BD_Bank_Management_System.models;
 
 namespace ICT_BD_Bank_Management_System.services
 {
-    public class CustomerService : ICustomerService
+    public static class CustomerService
     {
-        private BankManagementSystemDBContext _CONTEXT;
-        public CustomerService()
+        private static BankManagementSystemDBContext _CONTEXT;
+        static CustomerService()
         {
             _CONTEXT = new BankManagementSystemDBContext();
         }
 
-        public void AddCustomer(Customer customer)
+        public static void AddCustomer(Customer customer)
         {
             if(customer != null)
             {

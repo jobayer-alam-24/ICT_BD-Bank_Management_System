@@ -8,15 +8,15 @@ namespace ICT_BD_Bank_Management_System
     {
         static void Main(string[] args)
         {
-            try{
-                CustomerService services = new CustomerService();
-            Customer rahim = new Customer();
-            Console.WriteLine($"~~~~~~~~----------------Bank Management System----------------~~~~~~~~");
-            services.AddCustomer(CustomerController.InsertIntoCustomer(rahim));
+            try
+            {
+                Customer rahim = new Customer();
+                Console.WriteLine($"~~~~~~~~----------------Bank Management System----------------~~~~~~~~");
+                CustomerService.AddCustomer(CustomerController.InsertIntoCustomer(rahim));
             }
-            catch(Exception e){
-                Console.WriteLine(e);
-                Console.WriteLine(e.Message);
+            catch(Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
             }
         }
     }
