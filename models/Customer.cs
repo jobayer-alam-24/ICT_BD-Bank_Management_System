@@ -12,6 +12,8 @@ namespace ICT_BD_Bank_Management_System.models
         public string Name { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
         public CustomerStatus CustomerStatus { get; set; }
     }
 }

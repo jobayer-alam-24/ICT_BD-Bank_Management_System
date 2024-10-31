@@ -38,6 +38,8 @@ namespace ICT_BD_Bank_Management_System.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Age = table.Column<int>(type: "int", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerStatus = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
