@@ -41,6 +41,7 @@ namespace ICT_BD_Bank_Management_System.services
             {
                 GetExistingTransaction.TransactionTypes = transaction.TransactionTypes;
                 GetExistingTransaction.Amount = transaction.Amount;
+                GetExistingTransaction.AccountId = transaction.AccountId;  
                 GetExistingTransaction.Date = transaction.Date;
                 _CONTEXT.SaveChanges();
                 return "Messege: Transaction Updated Successfully!";

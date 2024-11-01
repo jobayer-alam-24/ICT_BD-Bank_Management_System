@@ -13,6 +13,7 @@ namespace ICT_BD_Bank_Management_System.models
         public decimal Amount { get; set; } 
         public DateTime Date {get; set; }
 
+        //Relationship As Foreign Key (FK)
         public int AccountId { get; set; }
     }
 }
