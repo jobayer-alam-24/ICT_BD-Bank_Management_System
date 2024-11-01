@@ -34,11 +34,11 @@ namespace ICT_BD_Bank_Management_System
                 // Console.WriteLine(CustomerService.RemoveCustomer(4));
 
                 //*******************************************************************************************Transaction********************************************************************
-                // TransactionService.AddTransaction(TransactionController.CreateA_Transaction(rahmansAccount, transaction1));
-                // TransactionController.PrintTransactionDetailsByID(TransactionService.GetTransaction(2));
-                // TransactionService.UpdateTransaction(2, TransactionController.UpdateTransaction(rahmansAccount, transaction1));
-                // TransactionController.PrintTransactionDetailsByID(TransactionService.GetTransaction(2));
-                // Console.WriteLine(TransactionService.RemoveTransaction(3));
+                TransactionHistoryService.AddTransaction(TransactionController.CreateA_Transaction(rahmansAccount, transaction1));
+                TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
+                TransactionHistoryService.UpdateTransaction(2, TransactionController.UpdateTransaction(rahmansAccount, transaction1));
+                TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
+                Console.WriteLine(TransactionHistoryService.RemoveTransaction(3));
                 //*******************************************************************************************Loan********************************************************************
                 // LoanService.AddLoan(LoanController.CreateA_Loan(loan1));
                 // LoanController.PrintSpecificLoanDetailsByID(LoanService.GetLoan(2));

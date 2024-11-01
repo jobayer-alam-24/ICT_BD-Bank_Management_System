@@ -7,10 +7,10 @@ using ICT_BD_Bank_Management_System.models;
 
 namespace ICT_BD_Bank_Management_System.services
 {
-    public static class TransactionService
+    public static class TransactionHistoryService
     {
         private static BankManagementSystemDBContext _CONTEXT;
-        static TransactionService()
+        static TransactionHistoryService()
         {
             _CONTEXT = new BankManagementSystemDBContext();
         }
