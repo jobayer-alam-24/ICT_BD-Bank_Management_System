@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ICT_BD_Bank_Management_System.Migrations;
 using ICT_BD_Bank_Management_System.models;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 

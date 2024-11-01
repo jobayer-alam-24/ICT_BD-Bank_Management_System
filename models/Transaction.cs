@@ -12,5 +12,7 @@ namespace ICT_BD_Bank_Management_System.models
         public TransactionTypes TransactionTypes { get; set; }
         public decimal Amount { get; set; } 
         public DateTime Date {get; set; }
+
+        public int AccountId { get; set; }
     }
 }

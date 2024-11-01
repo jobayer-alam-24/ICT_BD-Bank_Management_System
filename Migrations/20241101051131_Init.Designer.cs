@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ICT_BD_Bank_Management_System.Migrations
 {
     [DbContext(typeof(BankManagementSystemDBContext))]
-    [Migration("20241101004827_Init")]
+    [Migration("20241101051131_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -128,6 +128,9 @@ namespace ICT_BD_Bank_Management_System.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");

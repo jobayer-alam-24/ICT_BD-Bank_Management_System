@@ -74,7 +74,8 @@ namespace ICT_BD_Bank_Management_System.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TransactionTypes = table.Column<int>(type: "int", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AccountId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
