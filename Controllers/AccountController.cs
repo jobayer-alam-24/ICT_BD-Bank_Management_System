@@ -2,7 +2,7 @@
 using ICT_BD_Bank_Management_System.enums;
 using ICT_BD_Bank_Management_System.models;
 
-namespace ICT_BD_Bank_Management_System.customerController
+namespace ICT_BD_Bank_Management_System.accountController
 {
     public static class AccountController
     {

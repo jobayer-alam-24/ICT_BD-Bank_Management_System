@@ -46,6 +46,40 @@ namespace ICT_BD_Bank_Management_System.Migrations
                 {
                     table.PrimaryKey("PK_Customers", x => x.ID);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Loans",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LoanTypes = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    InterestRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Term = table.Column<int>(type: "int", nullable: false),
+                    StartedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LoanStatus = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Loans", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Transactions",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TransactionTypes = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Transactions", x => x.ID);
+                });
         }
 
         /// <inheritdoc />
@@ -56,6 +90,12 @@ namespace ICT_BD_Bank_Management_System.Migrations
 
             migrationBuilder.DropTable(
                 name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "Loans");
+
+            migrationBuilder.DropTable(
+                name: "Transactions");
         }
     }
 }

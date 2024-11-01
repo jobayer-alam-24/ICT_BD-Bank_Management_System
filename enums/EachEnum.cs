@@ -20,4 +20,22 @@ namespace ICT_BD_Bank_Management_System.enums
         Pending, 
         Deleted 
     }
+    public enum TransactionTypes
+    {
+        Deposit = 0,
+        Withdraw
+    }
+    public enum LoanTypes
+    {
+        Monthly = 0,
+        Yearly,
+        One
+    }
+    public enum LoanStatus
+    {
+        Paid = 0,
+        Unpaid,
+        Pending,
+        Under_Review
+    }
 }
