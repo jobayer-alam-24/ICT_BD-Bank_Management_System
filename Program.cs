@@ -3,6 +3,7 @@ using ICT_BD_Bank_Management_System.services;
 using ICT_BD_Bank_Management_System.customerController;
 using ICT_BD_Bank_Management_System.transactionController;
 using System.Diagnostics;
+using ICT_BD_Bank_Management_System.accountController;
 namespace ICT_BD_Bank_Management_System
 {
     class Program
@@ -15,6 +16,7 @@ namespace ICT_BD_Bank_Management_System
                 Customer rahmanUpdated = new Customer();
                 Account rahmansAccount = new Account();
                 Account rahmansAccount2 = new Account();
+                Loan loan1 = new Loan();
                 Transaction transaction1 = new Transaction();
                 Console.WriteLine($"~~~~~~~~----------------Bank Management System----------------~~~~~~~~");
                 //********************************************************************************************Account******************************************************************
@@ -37,6 +39,12 @@ namespace ICT_BD_Bank_Management_System
                 // TransactionService.UpdateTransaction(2, TransactionController.UpdateTransaction(transaction1));
                 // TransactionController.PrintTransactionDetailsByID(TransactionService.GetTransaction(2));
                 // Console.WriteLine(TransactionService.RemoveTransaction(3));
+                //*******************************************************************************************Loan********************************************************************
+                // LoanService.AddLoan(LoanController.CreateA_Loan(loan1));
+                LoanController.PrintSpecificLoanDetailsByID(LoanService.GetLoan(2));
+                LoanService.UpdateLoan(2, LoanController.UpdateLoan(loan1));
+                LoanController.PrintSpecificLoanDetailsByID(LoanService.GetLoan(2));
+                // Console.WriteLine(LoanService.RemoveLoan(1));
             }
             catch(ArgumentNullException e)
             {
