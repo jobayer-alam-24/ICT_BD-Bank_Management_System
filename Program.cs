@@ -4,6 +4,7 @@ using ICT_BD_Bank_Management_System.customerController;
 using ICT_BD_Bank_Management_System.transactionController;
 using System.Diagnostics;
 using ICT_BD_Bank_Management_System.accountController;
+using ICT_BD_Bank_Management_System.enums;
 namespace ICT_BD_Bank_Management_System
 {
     class Program
@@ -17,11 +18,27 @@ namespace ICT_BD_Bank_Management_System
                 Account rahmansAccount = new Account();
                 Account rahmansAccount2 = new Account();
                 Loan loan1 = new Loan();
-                Transaction transaction1 = new Transaction();
+                //Deposit
+                Transaction transaction1 = new Transaction
+                {
+                    TransactionTypes = TransactionTypes.Deposit,
+                    Amount = 500,
+                    AccountId = 2,
+                    Date = DateTime.Now,
+
+                };
+                Transaction transaction2 = new Transaction
+                {
+                    TransactionTypes = TransactionTypes.Withdraw,
+                    Amount = 500,
+                    AccountId = 2,
+                    Date = DateTime.Now,
+
+                };
                 Console.WriteLine($"~~~~~~~~----------------Bank Management System----------------~~~~~~~~");
                 //********************************************************************************************Account******************************************************************
                 // AccountService.AddAccount(AccountController.CreateA_Account(rahmansAccount));
-                // AccountController.PrintSpecificAccountDetailsByID(AccountService.FoundAccountById(1));
+                // AccountController.PrintSpecificAccountDetailsByID(AccountService.FoundAccountById(2));
                 // Console.WriteLine(AccountService.UpdateAccount(10, AccountController.UpdateAccount(rahmansAccount2)));
                 // AccountController.PrintSpecificAccountDetailsByID(AccountService.FoundAccountById(10));
                 // Console.WriteLine(AccountService.RemoveAccount(4));
@@ -34,11 +51,11 @@ namespace ICT_BD_Bank_Management_System
                 // Console.WriteLine(CustomerService.RemoveCustomer(4));
 
                 //*******************************************************************************************Transaction********************************************************************
-                TransactionHistoryService.AddTransaction(TransactionController.CreateA_Transaction(rahmansAccount, transaction1));
-                TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
-                TransactionHistoryService.UpdateTransaction(2, TransactionController.UpdateTransaction(rahmansAccount, transaction1));
-                TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
-                Console.WriteLine(TransactionHistoryService.RemoveTransaction(3));
+                TransactionHistoryService.AddTransaction(transaction2);
+                // TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
+                // TransactionHistoryService.UpdateTransaction(2, TransactionController.UpdateTransaction(rahmansAccount, transaction1));
+                // TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
+                // Console.WriteLine(TransactionHistoryService.RemoveTransaction(3));
                 //*******************************************************************************************Loan********************************************************************
                 // LoanService.AddLoan(LoanController.CreateA_Loan(loan1));
                 // LoanController.PrintSpecificLoanDetailsByID(LoanService.GetLoan(2));
@@ -52,7 +69,7 @@ namespace ICT_BD_Bank_Management_System
             }
             catch(ArgumentException e)
             {
-                Console.WriteLine($"Error: {e.ParamName}");
+                Console.WriteLine($"Error: {e}");
             }
             catch(FormatException)
             {
