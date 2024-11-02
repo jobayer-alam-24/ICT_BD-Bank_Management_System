@@ -21,6 +21,7 @@ namespace ICT_BD_Bank_Management_System
                     Address = "Dhaka Mirpur 10",
                     CustomerStatus = CustomerStatus.Active
                 };
+                Customer rahim = new Customer();
                 Loan rahmansLoan = new Loan{
                     ID =  1,
                     LoanTypes = LoanTypes.Monthly,
@@ -49,15 +50,15 @@ namespace ICT_BD_Bank_Management_System
                 Loan loan1 = new Loan();
                 Console.WriteLine($"~~~~~~~~----------------Bank Management System----------------~~~~~~~~");
                 //********************************************************************************************Account******************************************************************
-                // AccountService.AddAccount(AccountController.CreateA_Account(rahmansAccount));
-                // AccountController.PrintSpecificAccountDetailsByID(AccountService.FoundAccountById(2));
-                // Console.WriteLine(AccountService.UpdateAccount(10, AccountController.UpdateAccount(rahmansAccount2)));
-                // AccountController.PrintSpecificAccountDetailsByID(AccountService.FoundAccountById(10));
+                // AccountService.AddAccount(AccountController.CreateA_Account(1,rahmansAccount));
+                // AccountController.PrintSpecificAccountDetailsByID(AccountService.FoundAccountById(1));
+                // Console.WriteLine(AccountService.UpdateAccount(1, AccountController.UpdateAccount(1, rahmansAccount2)));
+                // AccountController.PrintSpecificAccountDetailsByID(AccountService.FoundAccountById(1));
                 // Console.WriteLine(AccountService.RemoveAccount(4));
 
                 //********************************************************************************************Customer********************************************************************
                 // CustomerService.AddCustomer(rahman);
-                // CustomerService.AddCustomer(CustomerController.InsertIntoCustomer(rahman));
+                // CustomerService.AddCustomer(CustomerController.InsertIntoCustomer(rahim));
                 // CustomerController.PrintSpecificCustomerByID(CustomerService.GetCustomer(10));
                 // Console.WriteLine(CustomerService.UpdateCustomer(10, CustomerController.UpdateIntoCustomer(rahmanUpdated)));
                 // CustomerController.PrintSpecificCustomerByID(CustomerService.GetCustomer(10));

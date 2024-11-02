@@ -22,7 +22,8 @@ namespace ICT_BD_Bank_Management_System.Migrations
                     OpenedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ClosedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AccountTypes = table.Column<int>(type: "int", nullable: false),
-                    AccountStatus = table.Column<int>(type: "int", nullable: false)
+                    AccountStatus = table.Column<int>(type: "int", nullable: false),
+                    CustomerID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

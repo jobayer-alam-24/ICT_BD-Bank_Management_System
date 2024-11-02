@@ -15,5 +15,8 @@ namespace ICT_BD_Bank_Management_System.models
         public DateTime  ClosedAt { get; set; }
         public AccountTypes AccountTypes { get; set; }
         public AccountStatus AccountStatus { get; set; }
+
+        //Relationship with Customer USING FK
+        public int CustomerID { get; set; }
     }
 }

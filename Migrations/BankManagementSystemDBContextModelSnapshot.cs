@@ -42,6 +42,9 @@ namespace ICT_BD_Bank_Management_System.Migrations
                     b.Property<DateTime>("ClosedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Number")
                         .HasColumnType("nvarchar(max)");
 

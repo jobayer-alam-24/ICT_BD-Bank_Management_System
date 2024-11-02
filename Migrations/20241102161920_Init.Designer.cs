@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ICT_BD_Bank_Management_System.Migrations
 {
     [DbContext(typeof(BankManagementSystemDBContext))]
-    [Migration("20241102092327_Init")]
+    [Migration("20241102161920_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -44,6 +44,9 @@ namespace ICT_BD_Bank_Management_System.Migrations
 
                     b.Property<DateTime>("ClosedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Number")
                         .HasColumnType("nvarchar(max)");
