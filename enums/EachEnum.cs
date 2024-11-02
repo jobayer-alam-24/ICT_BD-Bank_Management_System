@@ -34,8 +34,10 @@ namespace ICT_BD_Bank_Management_System.enums
     public enum LoanStatus
     {
         Paid = 0,
-        Unpaid,
+        Active,
         Pending,
+        Disabled,
+        Deleted,
         Under_Review
     }
 }

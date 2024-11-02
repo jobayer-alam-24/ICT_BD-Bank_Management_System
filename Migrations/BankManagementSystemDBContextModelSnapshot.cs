@@ -95,10 +95,22 @@ namespace ICT_BD_Bank_Management_System.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("DuePayment")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("EndedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal>("InterestAmount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<decimal>("InterestRate")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("LoanAmount")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("LoanStatus")
@@ -106,6 +118,9 @@ namespace ICT_BD_Bank_Management_System.Migrations
 
                     b.Property<int>("LoanTypes")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("PrincipalAmount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("StartedAt")
                         .HasColumnType("datetime2");
@@ -116,6 +131,25 @@ namespace ICT_BD_Bank_Management_System.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Loans");
+                });
+
+            modelBuilder.Entity("ICT_BD_Bank_Management_System.models.LoanPayment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("LoanID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PaidDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LoanPayments");
                 });
 
             modelBuilder.Entity("ICT_BD_Bank_Management_System.models.Transaction", b =>

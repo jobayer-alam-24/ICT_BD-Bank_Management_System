@@ -13,6 +13,7 @@ namespace ICT_BD_Bank_Management_System
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Loan> Loans { get; set; }
+        public DbSet<LoanPayment> LoanPayments {get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

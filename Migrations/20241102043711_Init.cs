@@ -48,6 +48,20 @@ namespace ICT_BD_Bank_Management_System.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "LoanPayments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PaidDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LoanID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LoanPayments", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Loans",
                 columns: table => new
                 {
@@ -55,11 +69,16 @@ namespace ICT_BD_Bank_Management_System.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LoanTypes = table.Column<int>(type: "int", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    DuePayment = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     InterestRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Term = table.Column<int>(type: "int", nullable: false),
                     StartedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LoanStatus = table.Column<int>(type: "int", nullable: false)
+                    LoanStatus = table.Column<int>(type: "int", nullable: false),
+                    LoanAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    PrincipalAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    InterestAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CustomerID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -91,6 +110,9 @@ namespace ICT_BD_Bank_Management_System.Migrations
 
             migrationBuilder.DropTable(
                 name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "LoanPayments");
 
             migrationBuilder.DropTable(
                 name: "Loans");
