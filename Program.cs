@@ -17,24 +17,9 @@ namespace ICT_BD_Bank_Management_System
                 Customer rahmanUpdated = new Customer();
                 Account rahmansAccount = new Account();
                 Account rahmansAccount2 = new Account();
+                Transaction deposit = new Transaction();
+                Transaction withdraw = new Transaction();
                 Loan loan1 = new Loan();
-                //Deposit
-                Transaction transaction1 = new Transaction
-                {
-                    TransactionTypes = TransactionTypes.Deposit,
-                    Amount = 500,
-                    AccountId = 2,
-                    Date = DateTime.Now,
-
-                };
-                Transaction transaction2 = new Transaction
-                {
-                    TransactionTypes = TransactionTypes.Withdraw,
-                    Amount = 500,
-                    AccountId = 2,
-                    Date = DateTime.Now,
-
-                };
                 Console.WriteLine($"~~~~~~~~----------------Bank Management System----------------~~~~~~~~");
                 //********************************************************************************************Account******************************************************************
                 // AccountService.AddAccount(AccountController.CreateA_Account(rahmansAccount));
@@ -51,7 +36,10 @@ namespace ICT_BD_Bank_Management_System
                 // Console.WriteLine(CustomerService.RemoveCustomer(4));
 
                 //*******************************************************************************************Transaction********************************************************************
-                TransactionHistoryService.AddTransaction(transaction2);
+                //Deposit
+                // Transaction transaction1 = TransactionController.CreateA_Transaction(deposit);
+                // TransactionHistoryService.AddTransaction(transaction1);
+                // AccountController.PrintSpecificAccountDetailsByID(AccountService.FoundAccountById(2));
                 // TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
                 // TransactionHistoryService.UpdateTransaction(2, TransactionController.UpdateTransaction(rahmansAccount, transaction1));
                 // TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));

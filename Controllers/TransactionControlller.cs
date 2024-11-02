@@ -6,12 +6,13 @@ namespace ICT_BD_Bank_Management_System.transactionController
 {
     public static class TransactionController
     {
-        public static Transaction CreateA_Transaction(int id, Transaction transaction)
+        public static Transaction CreateA_Transaction(Transaction transaction)
         {
             Console.Write($"Enter Your Transaction Amount: ");
             transaction.Amount = Convert.ToDecimal(Console.ReadLine());
+            Console.Write($"Enter Account ID: ");
+            transaction.AccountId = int.Parse(Console.ReadLine());
             transaction.Date = DateTime.Now;
-            transaction.AccountId = id;
             transaction.TransactionTypes = TransactionTypes.Deposit;
             Console.WriteLine($"-------------------------\nMessege: Transaction Created Successfully!\n-------------------------");
             
