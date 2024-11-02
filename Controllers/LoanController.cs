@@ -75,8 +75,27 @@ namespace ICT_BD_Bank_Management_System.accountController
         {
             return _CONTEXT.Loans.FirstOrDefault(x => x.CustomerID == id);
         }
-
-        
+        private static LoanPayment GetLoanForPayment(int id)
+        {
+            return _CONTEXT.LoanPayments.FirstOrDefault(x => x.LoanID == id);
+        }
+        public static void PrintLoanPaymentDetailsOf(Loan loan)
+        {
+            if(loan.ID <= 0) throw new ArgumentException("Invalid Loan ID Passed!");
+            else
+            {
+                LoanPayment loanPayment = GetLoanForPayment(loan.ID);
+                if(loanPayment == null) throw new ArgumentNullException("Invalid lOAN ID!");
+                else
+                {
+                    Console.Write($"---------Loan Payment-------------");
+                    Console.WriteLine($"ID: {loanPayment.Id}");
+                    Console.WriteLine($"Loan ID: {loanPayment.LoanID}");
+                    Console.WriteLine($"Paid Date: {loanPayment.PaidDate}");
+                    Console.WriteLine($"Paid Amount: {loanPayment.PaidAmount}");
+                }
+            }
+        }
     }
 }
 

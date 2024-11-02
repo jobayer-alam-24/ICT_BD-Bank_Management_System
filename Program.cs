@@ -22,6 +22,7 @@ namespace ICT_BD_Bank_Management_System
                     CustomerStatus = CustomerStatus.Active
                 };
                 Loan rahmansLoan = new Loan{
+                    ID =  1,
                     LoanTypes = LoanTypes.Monthly,
                     LoanStatus = LoanStatus.Active,
                     Amount = 50000,
@@ -72,6 +73,7 @@ namespace ICT_BD_Bank_Management_System
                 // TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
                 // Console.WriteLine(TransactionHistoryService.RemoveTransaction(3));
                 //*******************************************************************************************Loan********************************************************************
+                // LoanController.PrintLoanPaymentDetailsOf(rahmansLoan);
                 // LoanService.AddLoanPayment(loanPaymentOfRahman);
                 // LoanController.PrintLoanDetailsWhoTookLoan(4, rahmansLoan);
                 // LoanService.AddLoan(rahmansLoan);
