@@ -13,7 +13,28 @@ namespace ICT_BD_Bank_Management_System
         {
             try
             {
-                Customer rahman = new Customer();
+                Customer rahman = new Customer{
+                    Name = "Rahman Khan",
+                    Age = 23,
+                    Email = "rahman@gmail.com",
+                    PhoneNumber = "01903081186",
+                    Address = "Dhaka Mirpur 10",
+                    CustomerStatus = CustomerStatus.Active
+                };
+                Loan rahmansLoan = new Loan{
+                    LoanTypes = LoanTypes.Monthly,
+                    LoanStatus = LoanStatus.Active,
+                    Amount = 50000,
+                    LoanAmount = 5000,
+                    DuePayment = 5000,
+                    InterestRate = 0.5m,
+                    Term = 12,
+                    StartedAt = DateTime.Now,
+                    EndedAt = DateTime.MinValue,
+                    PrincipalAmount = 50000,
+                    InterestAmount = 50000 * 0.5m, 
+                    CustomerID = 4
+                };
                 Customer rahmanUpdated = new Customer();
                 Account rahmansAccount = new Account();
                 Account rahmansAccount2 = new Account();
@@ -29,6 +50,7 @@ namespace ICT_BD_Bank_Management_System
                 // Console.WriteLine(AccountService.RemoveAccount(4));
 
                 //********************************************************************************************Customer********************************************************************
+                // CustomerService.AddCustomer(rahman);
                 // CustomerService.AddCustomer(CustomerController.InsertIntoCustomer(rahman));
                 // CustomerController.PrintSpecificCustomerByID(CustomerService.GetCustomer(10));
                 // Console.WriteLine(CustomerService.UpdateCustomer(10, CustomerController.UpdateIntoCustomer(rahmanUpdated)));
@@ -45,8 +67,10 @@ namespace ICT_BD_Bank_Management_System
                 // TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
                 // Console.WriteLine(TransactionHistoryService.RemoveTransaction(3));
                 //*******************************************************************************************Loan********************************************************************
+                // LoanController.PrintLoanDetailsWhoTookLoan(4, rahmansLoan);
+                // LoanService.AddLoan(rahmansLoan);
                 // LoanService.AddLoan(LoanController.CreateA_Loan(loan1));
-                // LoanController.PrintSpecificLoanDetailsByID(LoanService.GetLoan(2));
+                // LoanController.PrintSpecificLoanDetailsByID(LoanService.GetLoan(4));
                 // LoanService.UpdateLoan(2, LoanController.UpdateLoan(loan1));
                 // LoanController.PrintSpecificLoanDetailsByID(LoanService.GetLoan(2));
                 // Console.WriteLine(LoanService.RemoveLoan(1));
