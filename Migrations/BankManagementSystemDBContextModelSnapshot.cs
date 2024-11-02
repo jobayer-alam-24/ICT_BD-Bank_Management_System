@@ -144,6 +144,9 @@ namespace ICT_BD_Bank_Management_System.Migrations
                     b.Property<int>("LoanID")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("PaidAmount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("PaidDate")
                         .HasColumnType("datetime2");
 

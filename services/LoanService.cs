@@ -23,6 +23,15 @@ namespace ICT_BD_Bank_Management_System.services
             }
             else throw new ArgumentNullException("Vacant Loan Can not Possible To add!");
         }
+        public static void AddLoanPayment(LoanPayment loanPayment)
+        {
+            if(loanPayment != null)
+            {
+                _CONTEXT.LoanPayments.Add(loanPayment);
+                _CONTEXT.SaveChanges();
+            }
+            else throw new ArgumentNullException("Vacant Loan Payment Can not Possible To add!");
+        }
         public static void UpdateLoan(int id, Loan loan)
         {
             Loan GetExistingLoan = GetLoan(id);
@@ -54,5 +63,25 @@ namespace ICT_BD_Bank_Management_System.services
             if(id <= 0) throw new ArgumentException("Invalid ID");
             else return _CONTEXT.Loans.Where(x => x.ID == id).FirstOrDefault();
         }
+        public static void UpdateLoanPayment(LoanPayment loanPayment)
+        {
+            if(loanPayment.LoanID <= 0 || loanPayment == null) throw new ArgumentException("Invalid ID");
+            else
+            {
+                Loan GetLoanPaymentByID = GetLoan(loanPayment.LoanID);
+                if(GetLoanPaymentByID == null) throw new ArgumentNullException("Empty Loan Payment");
+                else
+                {
+                    if(GetLoanPaymentByID.DuePayment > loanPayment.PaidAmount)
+                    {
+                        GetLoanPaymentByID.DuePayment -= loanPayment.PaidAmount;
+                    }
+                    else throw new ArgumentException("Invalid Paid Amount. Check Your Loan Amount. Above Loan Amount Exception");
+                }
+                _CONTEXT.Loans.Update(GetLoanPaymentByID);
+                _CONTEXT.SaveChanges();
+            }
+        }
+
     }
 }

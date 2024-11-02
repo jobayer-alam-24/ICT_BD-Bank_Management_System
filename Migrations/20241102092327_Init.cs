@@ -54,6 +54,7 @@ namespace ICT_BD_Bank_Management_System.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PaidDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PaidAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     LoanID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

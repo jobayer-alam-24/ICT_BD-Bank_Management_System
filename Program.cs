@@ -33,7 +33,12 @@ namespace ICT_BD_Bank_Management_System
                     EndedAt = DateTime.MinValue,
                     PrincipalAmount = 50000,
                     InterestAmount = 50000 * 0.5m, 
-                    CustomerID = 4
+                    CustomerID = 1
+                };
+                LoanPayment loanPaymentOfRahman = new LoanPayment{
+                    PaidDate = DateTime.Now,
+                    PaidAmount = 600, 
+                    LoanID = 1
                 };
                 Customer rahmanUpdated = new Customer();
                 Account rahmansAccount = new Account();
@@ -67,13 +72,15 @@ namespace ICT_BD_Bank_Management_System
                 // TransactionController.PrintTransactionDetailsByID(TransactionHistoryService.GetTransaction(2));
                 // Console.WriteLine(TransactionHistoryService.RemoveTransaction(3));
                 //*******************************************************************************************Loan********************************************************************
+                // LoanService.AddLoanPayment(loanPaymentOfRahman);
                 // LoanController.PrintLoanDetailsWhoTookLoan(4, rahmansLoan);
                 // LoanService.AddLoan(rahmansLoan);
+                // LoanService.UpdateLoanPayment(loanPaymentOfRahman);
                 // LoanService.AddLoan(LoanController.CreateA_Loan(loan1));
                 // LoanController.PrintSpecificLoanDetailsByID(LoanService.GetLoan(4));
                 // LoanService.UpdateLoan(2, LoanController.UpdateLoan(loan1));
                 // LoanController.PrintSpecificLoanDetailsByID(LoanService.GetLoan(2));
-                // Console.WriteLine(LoanService.RemoveLoan(1));
+                // Console.WriteLine(LoanService.RemoveLoan(1));  
             }
             catch(ArgumentNullException e)
             {

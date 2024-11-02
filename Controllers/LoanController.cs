@@ -75,6 +75,8 @@ namespace ICT_BD_Bank_Management_System.accountController
         {
             return _CONTEXT.Loans.FirstOrDefault(x => x.CustomerID == id);
         }
+
+        
     }
 }
 
